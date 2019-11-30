@@ -1,0 +1,147 @@
+.brand-logo {
+    font-weight: 600;
+    font-size: 1.2em !important;
+}
+
+.brand-logo b {
+    font-weight: bold;
+    font-size: 1.6em !important;
+}
+
+#nav-mobile {
+    font-weight: 600 !important;
+}
+
+#nav-mobile a {
+    font-size: .9em;
+}
+
+.equiv {
+    font-size: 2.4em;
+    font-weight: 600;
+    display: inline-block;
+    transform: translateY(-5px);
+}
+
+#mobile-menu a {
+    color: white;
+}
+
+#mobile-menu li.active {
+    background-color: #111;
+}
+
+.circle-result {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+}
+
+
+ul.collapsible li .collapsible-header {
+    position: relative;
+}
+
+.circle-result span:first-child {
+    margin-left: 10px;
+}
+
+.circle-result span {
+    font-weight: bold !important;
+}
+
+ul.collapsible {
+    margin: 1.5rem 0px !important;
+    box-shadow: none;
+}
+.circle-number {
+    margin-right: 10px;
+    background-color: #333;
+    width: 23px;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+}
+
+.collapsible-body {
+    background-color: rgba(250,250,250);
+}
+
+.card-image {
+    padding: 20px;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.card-image img {
+    width: 90px !important;
+}
+
+.card-content {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    box-sizing: border-box;
+}
+
+.card.horizontal {
+        box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+}
+
+.card-content h5 {
+    margin: 0px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card-content table td, .card-content table th {
+    padding: 10px 15px;
+}
+
+.card-content table {
+    font-size: .9em;
+    margin-top: 15px;
+}
+
+.card-content table tr:last-child {
+    border-bottom: none;
+}
+
+.favorite {
+    text-align: center;
+    font-size: 15pt;
+    margin: 10px 0px 0px 10px;
+}
+
+@media (max-width: 1024px) {
+    .card.horizontal {
+        display: block;
+    }
+    .card-stacked {
+        display: block !important;
+        text-align: center;
+    }  
+    .card-image {
+        display: block !important;
+        width: 100%;
+        max-width: 100% !important;
+    }
+    .card-image img {
+        display: inline-block;
+        margin: auto;
+    }
+    .card-stacked h5 {
+        text-align: center;
+    }
+}
+
+.error {
+    font-size: 5em;
+    font-weight: bolder;
+    color: red;
+    border: 8px solid red;
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    line-height: 80px;
+    border-radius: 50%;
+}

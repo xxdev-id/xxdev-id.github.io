@@ -1,7 +1,56 @@
-<!doctype HTML>
-<html>
-  <title>S</title>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Great Soccer
+    </title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest/manifest.json">
+    <meta name="theme-color" content="#283593" />
+</head>
+
 <body>
-  Hello World
+    <div id="nav-container"></div>
+    <div id="content-container"></div>
 </body>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/idb.js"></script>
+<script src="js/page.js"></script>
+<script>
+    if ("serviceWorker" in navigator) {
+        $(document).ready(function () {
+            navigator.serviceWorker.register("/service-worker.js").then(() => {
+                console.log("Service Worker Registration Success !");
+                    if (('PushManager' in window)) {
+                        navigator.serviceWorker.getRegistration().then(function (registration) {
+                            registration.pushManager.subscribe({
+                                userVisibleOnly: true,
+                                applicationServerKey: urlBase64ToUint8Array("BKQuDDzD3_Wd-CSpcPLIhrognPddh4GcYcB0G2m3iocXbKYqCVkAb2LRitEwv_hvAsXC6rxuDbKVF6Adl2kIq1I")
+                            }).then(function (subscribe) {
+                                console.log('Berhasil melakukan subscribe dengan endpoint: ', subscribe
+                                    .endpoint);
+                                console.log('Berhasil melakukan subscribe dengan p256dh key: ', btoa(String
+                                    .fromCharCode.apply(
+                                        null, new Uint8Array(subscribe.getKey('p256dh')))));
+                                console.log('Berhasil melakukan subscribe dengan auth key: ', btoa(String
+                                    .fromCharCode.apply(
+                                        null, new Uint8Array(subscribe.getKey('auth')))));
+                            }).catch(function (e) {
+                                console.error('Tidak dapat melakukan subscribe ', e.message);
+                            });
+                        });
+                    }
+            }).catch(() => {
+                console.log("Service Worker Registration Failed !")
+            })
+        })
+    }
+</script>
+
+</html>
